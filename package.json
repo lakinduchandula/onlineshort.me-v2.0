@@ -1,0 +1,34 @@
+{
+  "name": "onlineshort-me",
+  "version": "1.0.0",
+  "description": "url short and analyze",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start:dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lakinduchandula/onlineshort-me.git"
+  },
+  "author": "lakinduchandula",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lakinduchandula/onlineshort-me/issues"
+  },
+  "homepage": "https://github.com/lakinduchandula/onlineshort-me#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.0",
+    "helmet": "^4.6.0",
+    "mongoose": "^5.12.13",
+    "morgan": "^1.10.0",
+    "shortid": "^2.2.16",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

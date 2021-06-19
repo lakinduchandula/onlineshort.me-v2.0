@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>onlineshort.me</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/png" href="/title-img-64.png" />
+    <!-- Bootstrap icons-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-light bg-light static-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">onlineshort.me</a>
+        <a class="btn btn-danger" href="#limit">limited functionality mode</a>
+      </div>
+    </nav>
+    <!-- Masthead bg-masthead.jpg-->
+    <header class="masthead">
+      <form action="/shortme" method="POST">
+        <div class="container position-relative">
+          <div class="text-center text-white">
+            <!-- Page heading-->
+            <h1 class="mb-5">
+              Welcome to onlineshort.me<br />Let's short a link!
+            </h1>
+          </div>
+          <div class="d-md-flex justify-content-between align-items-center">
+            <div class="input-group">
+              <input type="text" class="form-control <% if (outputShortUrl) {
+              %>text-primary<% } %>" placeholder="Enter Long URL" id="longUrl"
+              name="longUrl" value="<% if (outputShortUrl) {
+              %>onlineshort.me/<%= shortUrl %><% } %>"" /> <%
+              if(!outputShortUrl) { %>
+              <button class="btn btn-primary btn-lg" type="submit" id="short">
+                Shorten
+              </button>
+              <% } else { %>
+              <button
+                class="btn btn-primary btn-lg"
+                id="copy_shortenURL"
+                type="button"
+              >
+                Copy
+              </button>
+              <script src="/js/user_.js"></script>
+              <% } %>
+            </div>
+          </div>
+        </div>
+      </form>
+    </header>
+    <!-- Icons Grid-->
+    <section class="features-icons bg-light text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <i class="bi-window m-auto text-primary"></i>
+              </div>
+              <h3>Better UX/UI</h3>
+              <p class="lead mb-0">
+                We are working on new features!<br> to bring better User Interface
+                and User Experiences to our clients
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <i class="bi-layers m-auto text-primary"></i>
+              </div>
+              <h3>Fast Redirection</h3>
+              <p class="lead mb-0">
+                You can enjoy much better performance when redirect back to original URL  
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <i class="bi-terminal m-auto text-primary"></i>
+              </div>
+              <h3>Easy to Use</h3>
+              <p class="lead mb-0">
+                No Accounts, Credit Cards. Just paste your long URL into the box, click Shorten
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Image Showcases-->
+    <section class="showcase">
+      <div class="container-fluid p-0">
+        <div class="row g-0">
+          <div
+            class="col-lg-6 order-lg-2 text-white showcase-img"
+            style="background-image: url('/main-img-manage.svg')"
+          ></div>
+          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+            <h2>Insights</h2>
+            <p class="lead mb-0">
+              After you create a Free account you can monitor your URL's
+              performance and activity through our powerful analytics tools.
+              (note: sorry! we are working on it)
+            </p>
+          </div>
+        </div>
+        <div class="row g-0">
+          <div
+            class="col-lg-6 text-white showcase-img"
+            style="background-image: url('/main-img-customize.svg')"
+          ></div>
+          <div class="col-lg-6 my-auto showcase-text">
+            <h2>Customize your URL</h2>
+            <p class="lead mb-0">
+              After you create a Free account you can customize back-half of
+              your URL. also you can edit it delte shortened URL at any time.
+              (note: sorry! we are working on it)
+            </p>
+          </div>
+        </div>
+        <div class="row g-0">
+          <div
+            class="col-lg-6 order-lg-2 text-white showcase-img"
+            style="background-image: url('/main-img-share.svg')"
+          ></div>
+          <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+            <h2>Easy to Share</h2>
+            <p class="lead mb-0">
+              A shortened link is easier for your readers to click, copy, and
+              share in your own post, which can help your content gain organic
+              exposure on social networks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+            <ul class="list-inline mb-2">
+              <li class="list-inline-item"><a href="#!">About</a></li>
+              <li class="list-inline-item">⋅</li>
+              <li class="list-inline-item"><a href="#!">Contact</a></li>
+              <li class="list-inline-item">⋅</li>
+              <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+              <li class="list-inline-item">⋅</li>
+              <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+            </ul>
+            <p class="text-muted small mb-4 mb-lg-0">
+              Developer : <a href="https://dev.to/lakinduchandula" target="_blank">Lakindu C. Samarasinghe</a>
+            </p>
+            <p class="text-muted small mb-4 mb-lg-0">
+              &copy; onlineshort.me @ 2021. All Rights Reserved.
+            </p>
+          </div>
+          <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item me-4">
+                <a href="https://www.facebook.com/LakinduOnline" target="_blank"><i class="bi-facebook fs-3"></i></a>
+              </li>
+              <li class="list-inline-item me-4">
+                <a href="https://twitter.com/BCSamarasinghe" target="_blank"><i class="bi-twitter fs-3"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/lakinduchandula/" target="_blank"><i class="bi-instagram fs-3"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
