@@ -28,7 +28,9 @@ exports.postShortURL = (req, res, next) => {
       });
     })
     .catch(err => {
-      console.log(err);
+      const error = new Error("short url registration faild!");
+      error.code = 500;
+      next(error);
     });
 };
 
@@ -51,7 +53,9 @@ exports.getLongUrl = (req, res, next) => {
       res.redirect(longUrl);
     })
     .catch(err => {
-      console.log(err);
+      const error = new Error("long url redirect faild!");
+      error.code = 500;
+      next(error);
     });
 };
 

@@ -37,6 +37,10 @@ app.use(morgan("combined", { stream: accessLogStram }));
 app.use(userRoutes);
 app.use(urlRoutes);
 
+app.use((error, req, res, next) => {
+  res.render("./error.ejs");
+});
+
 mongoose
   .connect(MONGODB_URI, {
     useNewUrlParser: true,
