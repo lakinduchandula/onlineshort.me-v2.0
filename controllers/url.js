@@ -1,6 +1,7 @@
 //*** import third party packages
 const shortid = require("shortid");
 const validUrl = require("valid-url");
+const { validationResult } = require("express-validator");
 
 //** import models
 const Url = require("../models/url");
@@ -12,20 +13,29 @@ const BASE_URL = "https://www.onlineshort.me/";
 exports.postShortURL = (req, res, next) => {
   const longUrl = req.body.longUrl;
   const shortUrl = shortid.generate();
-  if (!longUrl) {
-    return res.redirect("/");
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.render("./index", {
+      outputShortUrl: true,
+      colorCode: "danger",
+      shortUrl: errors.array()[0].msg,
+    });
   }
   const url = new Url({
     longUrl: longUrl,
     shortUrl: shortUrl,
   });
-  return url
+  url
     .save()
     .then(shortenUrlDoc => {
-      res.render("./index", {
-        outputShortUrl: true,
-        shortUrl: shortenUrlDoc.shortUrl,
-      });
+      if (shortenUrlDoc) {
+        res.render("./index", {
+          outputShortUrl: true,
+          colorCode: "primary",
+          shortUrl: "onlineshort.me/" + shortenUrlDoc.shortUrl,
+        });
+      }
     })
     .catch(err => {
       const error = new Error("short url registration faild!");

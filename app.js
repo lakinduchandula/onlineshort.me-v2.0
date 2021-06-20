@@ -38,7 +38,8 @@ app.use(userRoutes);
 app.use(urlRoutes);
 
 app.use((error, req, res, next) => {
-  res.render("./error.ejs");
+  console.log(error)
+  // res.render("./error.ejs");
 });
 
 mongoose
