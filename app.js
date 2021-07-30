@@ -17,7 +17,7 @@ const app = express();
 // constants
 const PORT = process.env.PORT || 3000;
 const MONGODB_URI =
-  "mongodb+srv://onlineshort-me:6rEkmXrzYVSRq5Nf@cluster1.lkpxe.mongodb.net/shorturl?retryWrites=true&w=majority";
+  "ENTER YOUR MONGO-DB CLUSTER URI";
 
 const accessLogStram = fs.createWriteStream(
   path.join(__dirname, "access.log"),
